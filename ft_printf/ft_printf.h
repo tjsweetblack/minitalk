@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-#include <unistd.h>
-#include <stdarg.h>
-#include <signal.h>
-#include <stdlib.h>
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <stdarg.h>
+# include <signal.h>
+# include <stdlib.h>
 
 int	ft_putchar_len(char c, int current_len);
 int	ft_print_num(int num, int current_len);

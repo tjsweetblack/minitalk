@@ -29,9 +29,9 @@ void	send_bit(char c, int pid)
 
 int	main(int argc, char **argv)
 {
-	int					pid;
-	char					*str;
-	int					i;
+	int		pid;
+	char	*str;
+	int		i;
 
 	if (argc == 3)
 	{
