@@ -12,12 +12,12 @@
 
 #include "./ft_printf/ft_printf.h"
 
-void send_bit(char c, int pid)
+void	send_bit(char c, int pid)
 {
-	int i;
+	int	i;
 
 	i = 8;
-	while(i--)
+	while (i--)
 	{
 		if ((c >> i & 1) == 1)
 			kill(pid, SIGUSR1);
@@ -27,29 +27,28 @@ void send_bit(char c, int pid)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int pid;
-	char *str;
-	int i;
+	int					pid;
+	char					*str;
+	int					i;
 
-	if(argc == 3)
+	if (argc == 3)
 	{
-		pid = atoi(argv[1]);
+		pid = ft_atoi(argv[1]);
 		str = argv[2];
 		i = 0;
-		while(str[i])
+		while (str[i])
 		{
 			send_bit(str[i], pid);
 			i++;
 		}
-	}else
+	}
+	else
 	{
 		ft_printf("\033[91mError: wrong format.\033[0m\n");
 		ft_printf("\033[33mTry: ./client <PID> <MESSAGE>\033[0m\n");
-		return(1);
+		return (1);
 	}
-
-	return(0);
-
+	return (0);
 }
